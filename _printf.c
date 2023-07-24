@@ -11,6 +11,7 @@
  * Return: the no of characters printed
  */
 
+
 int _printf(const char *format, ...)
 {
 	va_list argument;
@@ -51,5 +52,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(argument);
-return (printed_chars);
+	return (printed_chars);
 }
