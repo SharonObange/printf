@@ -6,8 +6,8 @@
 
 /**
  * _printf - prints a character and string and handles %
- * format: pointer to format specifier
- * ...: the variable number of variables
+ * @format: pointer to format specifier
+ * @...: the variable number of variables
  * Return: the no of characters printed
  */
 
