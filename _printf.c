@@ -53,6 +53,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(argument);
-	printf("%d\n", printed_chars);
 	return (printed_chars);
 }
