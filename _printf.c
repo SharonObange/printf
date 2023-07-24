@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 
 				while (*x != '\0')
 				{
+
 					_putchar(*x++);
 				}
 			}
@@ -52,5 +53,15 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(argument);
+	printf("%d\n", printed_chars);
 	return (printed_chars);
+}
+
+int main(void)
+{
+	char *name = "dan";
+	char grade = 'A';
+	_printf("%s\n", name);
+	_printf("%c\n", grade);
+	return (0);
 }
