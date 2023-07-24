@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 				int x = va_arg(argument, int);
 
 				_putchar(x);
+				printed_chars = printed_chars + 1;
 			}
 			else if (*format == 's')
 			{
@@ -38,18 +39,20 @@ int _printf(const char *format, ...)
 				{
 
 					_putchar(*x++);
+					printed_chars = printed_chars + 1;
 				}
 			}
 			else
 			{
 				_putchar('n');
+				printed_chars = printed_chars + 1;
 			}
 		}
 		else
 		{
 			_putchar(*format);
+			printed_chars = printed_chars + 1;
 		}
-		printed_chars = printed_chars + 1;
 		format++;
 	}
 	va_end(argument);
