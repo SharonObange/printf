@@ -33,9 +33,9 @@ int _printf(const char *format, ...)
 			{
 				char *characters = va_arg(argument, char *);
 
-				for (int x = 0; characters[x] != '\0'; x++)				{
+				while (*characters != '\0')
 				{
-					_putchar(characters[x]);
+					_putchar(*characters++);
 					printed_chars = printed_chars + 1;
 				}
 			}
