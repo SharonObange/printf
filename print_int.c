@@ -2,16 +2,23 @@
 #include <unistd.h>
 #include "main.h"
 
+/**
+ *print_int - prints an integer
+ *@number: integer to be printed
+ *Return: number of integers printed
+ */
 int print_int(int number)
 {
 	int printed_chars = 0;
+	char buffer[30];
+	int i = 0;
+	int negative_num = 0;
+
 	if (number == 0)
 	{
 		_putchar('0');
 	}
-	char buffer[30];
-	int i = 0;
-	int negative_num = 0;
+
 	if (number < 0)
 	{
 		negative_num = 1;

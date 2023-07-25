@@ -4,22 +4,31 @@
 #include <string.h>
 #include <unistd.h>
 
+/**
+ *_printf - prints out characters according to format
+ *@format: character string
+ *@...: unlimited number of arguments
+ *Return: nuber of characters printed
+ */
 int _printf(const char *format, ...)
 {
-	 va_list argument;
-        int printed_chars = 0;
+	va_list argument;
+	int printed_chars = 0;
+	int character, integer;
+	char *string;
+	float decimal;
 
-        va_start(argument, format);
-	int character = va_arg(argument, int);
-	char *string = va_arg(argument, char *);
-	float decimal = va_arg(argument, double);
-	int integer = va_arg(argument, int);
-	int hexa = va_arg(argument, int);
+	va_start(argument, format);
+	character = va_arg(argument, int);
+	string = va_arg(argument, char *);
+	decimal = va_arg(argument, double);
+	integer = va_arg(argument, int);
+
 	while (*format != '\0')
-        {
-                if (*format == '%')
-                {
-			*format++;
+	{
+		if (*format == '%')
+		{
+			format++;
 			if (*format == 'd')
 			{
 				print_int(integer);
@@ -37,9 +46,9 @@ int _printf(const char *format, ...)
 				print_char(character);
 			}
 		}
-		*format++;
+		format++;
 	}
 
 	va_end(argument);
-return (printed_chars);
+	return (printed_chars);
 }
