@@ -24,25 +24,32 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 			{
-				printed_chars += _putchar(va_arg(argument, int));
+				int characters = va_arg(argument, int);
+
+				_putchar(characters);
+				printed_chars = printed_chars + 1;
 			}
 			else if (*format == 's')
 			{
-				char *x = va_arg(arguments, char *);
+				char *characters = va_arg(argument, char *);
 
-				while (*x != '\0')
+				for (int x = 0; characters[x] != '\0'; x++)				{
 				{
-					printed_chars += _putchar(*x++);
+					_putchar(characters[x]);
+					printed_chars = printed_chars + 1;
 				}
+			}
 			}
 			else
 			{
-				printed_chars += _putchar('n');
+				_putchar(*format);
+				printed_chars = printed_chars + 1;
 			}
 		}
 		else
 		{
-			printed_chars += _putchar(*format);
+			_putchar(*format);
+			printed_chars = printed_chars + 1;
 		}
 		format++;
 	}
