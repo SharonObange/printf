@@ -10,6 +10,8 @@
 int print_str(const char *string)
 {
 	int printed_chars = 0;
+	char test_string;
+
 	if (string == NULL)
 	{
 		return (-1);
@@ -18,7 +20,7 @@ int print_str(const char *string)
 
 	while (*string != '\0')
 	{
-		char test_string = *string;
+		test_string = *string;
 
 		if (test_string == '\n')
 		{
